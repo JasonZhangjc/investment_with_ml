@@ -6,5 +6,6 @@
 
 - Graphical Analysis with Clustering Algorithms.
 
-- Regime-Based Investment Model with Simulation
+- Regime-Based Investment Model with Simulation.
 
+- Regime Prediction with ML Classification Algorithms.
