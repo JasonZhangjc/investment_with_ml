@@ -5,3 +5,6 @@
 - Factor Model with Regression Methods.
 
 - Graphical Analysis with Clustering Algorithms.
+
+- Regime-Based Investment Model with Simulation
+
