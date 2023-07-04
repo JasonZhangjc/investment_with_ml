@@ -303,6 +303,7 @@ def efficient_frontier_comparison(r_annual, Q_all, r_bar, n_scenarios=10000):
     plt.title("Traditional", fontsize=16);
     
     # scenario-based single period model
+    # sample from the multivariate_normal distribution and returns an array
     r_all_1 = np.random.multivariate_normal(r_annual.reshape(n_asset), Q_all, n_scenarios)
 
     Q_1 = np.cov(r_all_1.T)
@@ -341,6 +342,7 @@ def efficient_frontier_twoRegime(ret, ret_g, ret_c, r_bar, n_scenarios = 10000):
     Q_c = np.cov(ret_c.T) * 12
     n_asset = r_annual.size
 
+    # sample from the multivariate_normal distribution and returns an array
     s_1 = np.random.multivariate_normal(r_g, Q_g, n_g)
     s_2 = np.random.multivariate_normal(r_c, Q_c, n_scenarios-n_g)
     r_all_2 = np.vstack((s_1,s_2))
@@ -379,6 +381,8 @@ def regime_asset(n,mu1,mu2,Q1,Q2,p1,p2):
     p1: probability of staying in the normal regime given we are at normal regime
     p2: probability of switching to the normal regime given we are at crash regime
     '''
+    # Sample from the multivariate normal distribution
+    # then returns an np.array
     s_1 = np.random.multivariate_normal(mu1, Q1, n).T
     s_2 = np.random.multivariate_normal(mu2, Q2, n).T
     regime = np.ones(n)
